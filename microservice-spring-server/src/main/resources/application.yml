@@ -1,0 +1,22 @@
+server:
+  port: 8761
+spring:
+  security:
+    basic:
+      enabled: true
+    user:
+      name: user
+      password: password123
+eureka:
+  server:
+    # 关闭自我保护
+    enable-self-preservation: false
+    # 清理服务器
+    eviction-interval-timer-in-ms: 5000
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    healthcheck:
+      enabled: true
+    service-url:
+      defaultZone: http://user:password123@localhost:8761/eureka
