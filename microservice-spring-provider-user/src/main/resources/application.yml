@@ -1,5 +1,5 @@
 server:
-  port: 7900
+  port: 7905
 spring:
   jpa:
     generate-ddl: false
@@ -12,6 +12,11 @@ spring:
     data: classpath:data.sql
   application:
     name: microservice-spring-provider-user
+    instance_id: localhost
+  cloud:
+    client:
+      ipAddress: localhost
+
 logging:
   level:
     root: INFO
@@ -21,8 +26,10 @@ logging:
     com.itmuch: DEBUG
 eureka:
   client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://user:password123@localhost:8761/eureka
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
@@ -30,4 +37,3 @@ eureka:
       zone: ABC      # eureka可以理解的元数据
       lilizhou: BBC  # 不会影响客户端行为
     lease-renewal-interval-in-seconds: 5
-    appname: microservice-spring-provider-user

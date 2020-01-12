@@ -1,6 +1,6 @@
-package com.bus.provideruser.microservicespringprovideruser.repository;
+package com.bus.provider.user.microservicespringprovideruser.repository;
 
-import com.bus.provideruser.microservicespringprovideruser.entity.User;
+import com.bus.provider.user.microservicespringprovideruser.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

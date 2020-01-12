@@ -1,4 +1,4 @@
-package com.bus.provideruser.microservicespringprovideruser;
+package com.bus.provider.user.microservicespringprovideruser;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

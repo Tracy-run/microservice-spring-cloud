@@ -1,10 +1,20 @@
-package com.bus.provideruser.microservicespringprovideruser.entity;
+package com.bus.provider.user.microservicespringprovideruser.entity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 public class User {
+
+    public User(Integer id,String username){
+        super();
+        this.id = id;
+        this.username = username;
+    }
+
+    public User(){
+        super();
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
