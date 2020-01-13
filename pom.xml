@@ -11,6 +11,8 @@
     <module>microservice-spring-user</module>
     <module>microservice-spring-provider-user</module>
     <module>microservice-simple-provider-user</module>
+    <module>microservice-gateway-zuul</module>
+    <module>microservice-spring-ribbon</module>
   </modules>
 
   <parent>
