@@ -12,7 +12,7 @@ public class KafkaConsumerDemo {
     private final KafkaConsumer<String,String> consumer;
 
 
-    public KafkaProducerDemo(){
+    public KafkaConsumerDemo(){
         Properties pros = new Properties();
         pros.put("bootstrap.servers","localhost:9092");
         pros.put("group.id","test");

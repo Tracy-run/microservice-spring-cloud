@@ -17,7 +17,7 @@ public class KafkaProducerDemo {
     private Producer<String,String> createKafkaProducer(){
         Properties pros = new Properties();
         pros.put("bootstrap.servers","localhost:9092");
-        pros.put("acks","all");
+        pros.put("acks","0");
         pros.put("retries",0);
         pros.put("batch.size",16384);
         pros.put("linger.ms",1);
