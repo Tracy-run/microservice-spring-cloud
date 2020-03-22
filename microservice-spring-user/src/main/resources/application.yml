@@ -10,6 +10,12 @@ spring:
     platform: h2
     schema: classpath:schema.sql
     data: classpath:data.sql
+  application:
+    name: microservice-spring-user
+    instance_id: localhost
+  cloud:
+      client:
+        ipAddress: localhost
 logging:
   level:
     root: INFO
@@ -19,7 +25,10 @@ logging:
     com.bus: debug
 eureka:
   client:
+    healthcheck:
+      enabled: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://user:password123@localhost:8761/eureka
     instance:
       prefer-ip-address: true  #将服务注册至eureka  否则注册的是ip
+      instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}}
